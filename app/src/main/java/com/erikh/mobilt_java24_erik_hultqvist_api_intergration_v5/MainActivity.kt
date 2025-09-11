@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -23,6 +24,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var toolbar: Toolbar
 
+    private lateinit var toolbarTitle: TextView
+
     companion object{
         lateinit var etStatic: EditText
         lateinit var navController: NavController
@@ -32,6 +35,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
+        val toolbarTitle = findViewById<TextView>(R.id.toolbarTitle)
+        toolbarTitle.text = "Weather"
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView)
                 as NavHostFragment
@@ -59,6 +65,8 @@ class MainActivity : AppCompatActivity() {
             }
 
     }
+
+
 
     override fun onResume() {
         super.onResume()

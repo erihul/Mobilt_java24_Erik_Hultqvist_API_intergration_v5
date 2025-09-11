@@ -2,6 +2,7 @@ package com.erikh.mobilt_java24_erik_hultqvist_api_intergration_v5
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -33,8 +34,8 @@ class BlankFragment2 : Fragment() {
             R.drawable.bg_fragment_2_1,
             R.drawable.bg_fragment_3_1,
             R.drawable.bg_fragment_3_2,
-            R.drawable.bg_fragment_2_2,
-            R.drawable.bg_fragment_4_3
+            R.drawable.bg_fragment_4_1,
+            R.drawable.bg_fragment_4_3,
         )
         val backgroundImage = view.findViewById<ImageView>(R.id.backgroundImage2)
         backgroundImage.setImageResource(backgrounds.random())
@@ -48,10 +49,12 @@ class BlankFragment2 : Fragment() {
 
        /* val lat = 55.60587  // Example: malmö
         val lon = 13.00073*/
-        val prefs = requireContext().getSharedPreferences("weather_prefs", Context.MODE_PRIVATE)
-        val lat = prefs.getFloat("latitude", 55.60587f).toDouble()
-        val lon = prefs.getFloat("longitude", 13.00073f).toDouble()
-        val locationName = prefs.getString("location_name", "Malmö")
+        val prefs = requireContext().getSharedPreferences(PreferenceKeys.PREFS_NAME, Context.MODE_PRIVATE)
+        Log.i(TAG, "prefs - Location: " + prefs.getString(PreferenceKeys.KEY_LOCATION_NAME, Constants.DEFAULT_LOCATION_NAME) + " lat: " + prefs.getFloat(PreferenceKeys.KEY_LATITUDE, Constants.DEFAULT_LAT) + " long: " + prefs.getFloat(PreferenceKeys.KEY_LONGITUDE, Constants.DEFAULT_LON) + " ")
+        val lat = prefs.getFloat(PreferenceKeys.KEY_LATITUDE, Constants.DEFAULT_LAT).toDouble()
+        val lon = prefs.getFloat(PreferenceKeys.KEY_LONGITUDE, Constants.DEFAULT_LON).toDouble()
+        val locationName = prefs.getString(PreferenceKeys.KEY_LOCATION_NAME, Constants.DEFAULT_LOCATION_NAME)
+
         cityText.text = locationName
 
         WeatherService.getCurrentWeather(
@@ -62,7 +65,6 @@ class BlankFragment2 : Fragment() {
             descriptionText,
             weatherIcon
         )
-
         forecastText.setOnClickListener {
             navController.navigate(R.id.action_blankFragment2_to_blankFragment3)
         }
@@ -83,7 +85,6 @@ class BlankFragment2 : Fragment() {
     }
 
     companion object {
-
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
             BlankFragment2().apply {

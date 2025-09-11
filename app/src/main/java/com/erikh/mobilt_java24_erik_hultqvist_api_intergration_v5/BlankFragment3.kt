@@ -35,17 +35,19 @@ class BlankFragment3 : Fragment() {
             R.drawable.bg_fragment_4_2,
             R.drawable.bg_fragment_4_1
         )
-        val backgroundImage = view.findViewById<ImageView>(R.id.backgroundImage3)
+        backgroundImage = view.findViewById<ImageView>(R.id.backgroundImage3)
         backgroundImage.setImageResource(backgrounds.random())
 
         forecastRecyclerView = view.findViewById(R.id.forecastRecyclerView)
         forecastRecyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        val locationText = view.findViewById<TextView>(R.id.forecastLocationText)
-        val prefs = requireContext().getSharedPreferences("weather_prefs", Context.MODE_PRIVATE)
-        val lat = prefs.getFloat("latitude", 55.60587f).toDouble()  // Malmö default
-        val lon = prefs.getFloat("longitude", 13.00073f).toDouble()
-        val locationName = prefs.getString("location_name", "Unknown location")
+        locationText = view.findViewById<TextView>(R.id.forecastLocationText)
+
+        val prefs = requireContext().getSharedPreferences(PreferenceKeys.PREFS_NAME, Context.MODE_PRIVATE)
+        val lat = prefs.getFloat(PreferenceKeys.KEY_LATITUDE, Constants.DEFAULT_LAT).toDouble()
+        val lon = prefs.getFloat(PreferenceKeys.KEY_LONGITUDE, Constants.DEFAULT_LON).toDouble()
+        val locationName = prefs.getString(PreferenceKeys.KEY_LOCATION_NAME, Constants.DEFAULT_LOCATION_NAME)
+
         locationText.text = "$locationName"
 
         WeatherService.getForecast(

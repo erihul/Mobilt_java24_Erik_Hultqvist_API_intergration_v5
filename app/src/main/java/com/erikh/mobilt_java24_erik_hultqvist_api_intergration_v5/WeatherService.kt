@@ -43,9 +43,11 @@ object WeatherService {
                     val iconCode = weatherArray.getJSONObject(0).getString("icon")
                     val iconUrl = "https://openweathermap.org/img/w/$iconCode.png"
 
-                    //cityText.text = "Malmö"
-                    val cityName = response.getString("name")
-                    cityText.text = cityName
+                    val prefs = context.getSharedPreferences(PreferenceKeys.PREFS_NAME, Context.MODE_PRIVATE)
+                    val savedName = prefs.getString(PreferenceKeys.KEY_LOCATION_NAME, "Unknown location")
+                    cityText.text = savedName
+
+
                     tempText.text = "$temp°C"
                     descriptionText.text = description.capitalize()
 

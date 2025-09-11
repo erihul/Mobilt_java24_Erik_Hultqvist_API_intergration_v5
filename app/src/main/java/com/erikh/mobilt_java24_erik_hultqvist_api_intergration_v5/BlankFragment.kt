@@ -1,5 +1,7 @@
 package com.erikh.mobilt_java24_erik_hultqvist_api_intergration_v5
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -27,6 +29,7 @@ class BlankFragment : Fragment() {
     private lateinit var backgroundImage: ImageView
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -39,6 +42,9 @@ class BlankFragment : Fragment() {
         loginPassword = view.findViewById(R.id.loginPassword)
         loginButton = view.findViewById(R.id.loginButton)
 
+        val prefs = requireContext().getSharedPreferences("weather_prefs", Context.MODE_PRIVATE)
+        Log.i(TAG, "prefs - Location : " + prefs.getString(PreferenceKeys.KEY_LOCATION_NAME, Constants.DEFAULT_LOCATION_NAME) + " lat: " + prefs.getFloat(PreferenceKeys.KEY_LATITUDE, Constants.DEFAULT_LAT) + " long: " + prefs.getFloat(PreferenceKeys.KEY_LONGITUDE, Constants.DEFAULT_LON) + " ")
+
         auth = FirebaseAuth.getInstance()
 
         val backgrounds = listOf(
@@ -49,12 +55,15 @@ class BlankFragment : Fragment() {
             R.drawable.bg_fragment_3_3
         )
 
-        val backgroundImage = view.findViewById<ImageView>(R.id.backgroundImage)
+        backgroundImage = view.findViewById<ImageView>(R.id.backgroundImage)
         backgroundImage.setImageResource(backgrounds.random())
 
+        val userName = "testar@testar.com"
+        val userPassword = "testar"
+
         loginButton.setOnClickListener {
-            val userName = loginName.text.toString()
-            val userPassword = loginPassword.text.toString()
+            /*val userName = loginName.text.toString()
+            val userPassword = loginPassword.text.toString()*/
 
             if (userName.isNotEmpty() && userPassword.isNotEmpty()) {
 
