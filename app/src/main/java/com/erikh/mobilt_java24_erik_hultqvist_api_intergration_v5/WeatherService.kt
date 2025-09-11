@@ -5,6 +5,11 @@ import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import android.app.NotificationManager
+import android.content.pm.PackageManager
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContextCompat
 import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
@@ -43,9 +48,29 @@ object WeatherService {
                     val iconCode = weatherArray.getJSONObject(0).getString("icon")
                     val iconUrl = "https://openweathermap.org/img/w/$iconCode.png"
 
-                    //cityText.text = "Malmö"
-                    val cityName = response.getString("name")
-                    cityText.text = cityName
+                    // ✅ Trigger a notification if it's raining
+                    if (description.contains("rain", ignoreCase = true)) {
+                        showWeatherNotification(
+                            context,
+                            "☔ Rain Alert",
+                            "It's currently raining in ${response.getString("name")}!"
+                        )
+                    }
+
+                    // ✅ Or notify if it's hot
+                    if (temp > 25) {
+                        showWeatherNotification(
+                            context,
+                            "🔥 Hot Weather",
+                            "It's hot in ${response.getString("name")}! Temperature: $temp°C"
+                        )
+                    }
+
+                    val prefs = context.getSharedPreferences(PreferenceKeys.PREFS_NAME, Context.MODE_PRIVATE)
+                    val savedName = prefs.getString(PreferenceKeys.KEY_LOCATION_NAME, "Unknown location")
+                    cityText.text = savedName
+
+
                     tempText.text = "$temp°C"
                     descriptionText.text = description.capitalize()
 
@@ -136,5 +161,28 @@ object WeatherService {
         val description: String,
         val iconUrl: String
     )
+
+    fun showWeatherNotification(context: Context, title: String, message: String) {
+        Log.i(TAG, "showWeatherNotification: HMM....")
+        val builder = NotificationCompat.Builder(context, "weather_channel")
+            .setSmallIcon(android.R.drawable.ic_dialog_info) // Use a default icon
+            .setContentTitle(title)
+            .setContentText(message)
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+
+        if (ContextCompat.checkSelfPermission(
+                context,
+                android.Manifest.permission.POST_NOTIFICATIONS
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
+            with(NotificationManagerCompat.from(context)) {
+                notify((System.currentTimeMillis() % 10000).toInt(), builder.build())
+            }
+        } else {
+            Log.w(TAG, "Notification permission not granted")
+
+        }
+    }
+
 
 }

@@ -1,11 +1,16 @@
 package com.erikh.mobilt_java24_erik_hultqvist_api_intergration_v5
 
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +19,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
@@ -22,6 +28,8 @@ class MainActivity : AppCompatActivity() {
     var TAG = "ERIK"
 
     private lateinit var toolbar: Toolbar
+
+    private lateinit var toolbarTitle: TextView
 
     companion object{
         lateinit var etStatic: EditText
@@ -32,6 +40,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+
+        createNotificationChannel(this)
+
+        FirebaseApp.initializeApp(this)
+
+        val toolbarTitle = findViewById<TextView>(R.id.toolbarTitle)
+        toolbarTitle.text = "Weather"
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView)
                 as NavHostFragment
@@ -60,6 +75,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+
     override fun onResume() {
         super.onResume()
     }
@@ -83,4 +100,20 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
+
+    fun createNotificationChannel(context: Context) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channel = NotificationChannel(
+                "weather_channel",
+                "Weather Alerts",
+                NotificationManager.IMPORTANCE_DEFAULT
+            ).apply {
+                description = "Notifications for weather events like rain or heat"
+            }
+
+            val manager = context.getSystemService(NotificationManager::class.java)
+            manager.createNotificationChannel(channel)
+        }
+    }
+
 }

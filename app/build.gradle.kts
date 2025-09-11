@@ -58,13 +58,16 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation(libs.androidx.navigation.fragment.ktx)
     implementation(libs.androidx.navigation.ui.ktx)
+    implementation("androidx.recyclerview:recyclerview:1.3.0")
 
     implementation(platform("com.google.firebase:firebase-bom:34.2.0"))
     implementation("com.google.firebase:firebase-auth-ktx:22.1.1")
-    //implementation(libs.firebase.auth.ktx)
+
+    implementation("com.google.firebase:firebase-firestore-ktx:24.10.3")
 
     implementation ("com.github.bumptech.glide:glide:4.16.0")
     implementation(libs.play.services.location)
+
     annotationProcessor ("com.github.bumptech.glide:compiler:4.16.0")
 
     testImplementation(libs.junit)
