@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "916681284260",
+    "project_id": "erikmobiledatabase",
+    "storage_bucket": "erikmobiledatabase.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916681284260:android:9ce32959bdea44da2fe431",
+        "android_client_info": {
+          "package_name": "com.erikh.mobilt_java24_erik_hultqvist_api_intergration_v5"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN4yvjBpfzlRUFR8Bd3UcveAacfUe0_MU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916681284260:android:cbaded237bd226cd2fe431",
+        "android_client_info": {
+          "package_name": "com.example.uppgiftett"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAN4yvjBpfzlRUFR8Bd3UcveAacfUe0_MU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
