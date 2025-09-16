@@ -32,11 +32,11 @@
             android:id="@+id/button_get_current_location"
             android:layout_width="249dp"
             android:layout_height="43dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="60dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="36dp"
             android:text="Automatically get position"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/savedlocationText"
@@ -76,14 +76,13 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvLocations"
-            android:layout_width="366dp"
-            android:layout_height="176dp"
+            android:layout_width="377dp"
+            android:layout_height="235dp"
+            android:layout_marginEnd="4dp"
             android:clipToPadding="false"
             android:padding="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.989"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button_get_current_location"
             app:layout_constraintVertical_bias="1.0" />
 
@@ -92,24 +91,24 @@
             style="?android:attr/progressBarStyleLarge"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            app:layout_constraintTop_toTopOf="parent"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/loadingText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
             android:text="Getting your location..."
             android:visibility="gone"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@id/progressBar"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintTop_toBottomOf="@id/progressBar" />
 
         <TextView
             android:id="@+id/textView9"
