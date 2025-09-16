@@ -20,19 +20,19 @@ För inloggning använder jag **Firebase Authentication**.
 - `MainActivity` med `FragmentContainerView`
 - Fyra Fragments:
 
-    1. **Login**
+1. **Login**
 
        ![Login Fragment](images/login_fragment.png)
 
-    2. **Main (Current Weather)**
+2. **Main (Current Weather)**
 
        ![Main Weather Fragment](images/current_weather_fragment.png)
 
-    3. **5-Day Forecast**
+3. **5-Day Forecast**
 
        ![Forecast Fragment](images/forecast_fragment.png)
 
-    4. **Location (Settings)**
+4. **Location (Settings)**
 
        ![Location Fragment](images/location_fragment.png)
 
