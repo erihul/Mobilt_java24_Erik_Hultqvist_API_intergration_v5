@@ -15,7 +15,7 @@ Jag har valt att göra en väderapp, där jag använder två API:er:
 
 <table>
     <tr>
-    <td  width="50%">
+    <td width="50%">
     <img src="images/login_fragment.png"/>
     </td>
     <td width="50%">
