@@ -24,57 +24,106 @@
             android:text="Location"
             android:textSize="65sp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/button_get_current_location"
-            android:layout_width="270dp"
-            android:layout_height="54dp"
-            android:layout_marginStart="84dp"
+            android:layout_width="249dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="60dp"
             android:text="Automatically get position"
-            app:layout_constraintBottom_toBottomOf="@+id/backgroundImage4"
-            app:layout_constraintStart_toStartOf="@+id/backgroundImage4"
-            app:layout_constraintTop_toBottomOf="@+id/savedlocationText"
-            app:layout_constraintVertical_bias="0.416" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
         <TextView
             android:id="@+id/savedlocationText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="76dp"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="12dp"
             android:background="#3C888888"
             android:fontFamily="@font/urbanist_bold"
             android:text="Saved location: (none)"
             android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="@+id/backgroundImage4"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-        <EditText
-            android:id="@+id/editTextText"
-            android:layout_width="278dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="48dp"
-            android:layout_marginEnd="28dp"
-            android:background="@color/textBackgroundWhite"
-            android:ems="10"
-            android:hint="Search for location"
-            android:inputType="text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/textView7"
+            tools:layout_editor_absoluteX="74dp" />
 
         <Button
             android:id="@+id/button_save_location"
             android:layout_width="168dp"
             android:layout_height="53dp"
-            android:layout_marginEnd="84dp"
+            android:layout_marginStart="100dp"
             android:text="Save Location"
-            app:layout_constraintBottom_toBottomOf="@+id/backgroundImage4"
-            app:layout_constraintEnd_toEndOf="@+id/backgroundImage4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/backgroundImage4"
             app:layout_constraintTop_toBottomOf="@+id/editTextText"
-            app:layout_constraintVertical_bias="0.102" />
+            app:layout_constraintVertical_bias="0.169" />
 
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="278dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="44dp"
+            android:layout_marginTop="52dp"
+            android:background="@color/textBackgroundWhite"
+            android:ems="10"
+            android:hint="Search for location"
+            android:inputType="text"
+            app:layout_constraintStart_toStartOf="@+id/backgroundImage4"
+            app:layout_constraintTop_toBottomOf="@+id/savedlocationText" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvLocations"
+            android:layout_width="366dp"
+            android:layout_height="176dp"
+            android:clipToPadding="false"
+            android:padding="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.989"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_get_current_location"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/loadingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Getting your location..."
+            android:visibility="gone"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/progressBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/urbanist_bold"
+            android:text="Location History"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/rvLocations"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.816"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button_save_location"
+            app:layout_constraintVertical_bias="1.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
