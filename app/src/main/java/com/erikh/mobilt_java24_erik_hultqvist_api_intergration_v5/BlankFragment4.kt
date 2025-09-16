@@ -149,7 +149,7 @@ class BlankFragment4 : Fragment() {
                     }
                 }
 
-// Start the location update
+                // Start the location update
                 fusedLocationClient.requestLocationUpdates(
                     locationRequest,
                     locationCallback,
