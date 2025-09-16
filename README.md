@@ -16,9 +16,9 @@ Jag har valt att göra en väderapp, där jag använder två API:er:
 <table>
     <tr>
     <td>
-    <img src="images/login_fragment.png" width="200"/>
+    <img src="images/login_fragment.png" width="25%"/>
     </td>
-    <td>
+    <td width="75%">
         För inloggning används <strong>Firebase Authentication</strong>.
     </td>
     </tr>
@@ -29,9 +29,9 @@ Jag har valt att göra en väderapp, där jag använder två API:er:
 <table>
     <tr>
     <td>
-    <img src="images/current_weather_fragment.png" width="400"/>
+    <img src="images/current_weather_fragment.png" width="25%"/>
     </td>
-    <td>
+    <td width="75%">
         Här hämtar jag platsen från sharedPreferences och kollar den mot Openweathermap. Där tar jag ut temperatur, beskrivning och ikon.
     </td>
     </tr>
@@ -42,9 +42,9 @@ Jag har valt att göra en väderapp, där jag använder två API:er:
 <table>
     <tr>
     <td>
-    <img src="images/forecast_fragment.png" width="200"/>
+    <img src="images/forecast_fragment.png" width="25%"/>
     </td>
-    <td>
+    <td width="75%">
         I detta fragment får användaren se 5-dagarsprognosen för den “valda” platsen. Det är ett annat APIanrop än från “main” fragmentet..
     </td>
     </tr>
@@ -55,9 +55,9 @@ Jag har valt att göra en väderapp, där jag använder två API:er:
 <table>
     <tr>
     <td>
-    <img src="images/location_fragment.png" width="400"/>
+    <img src="images/location_fragment.png" width="25%"/>
     </td>
-    <td width="400">
+    <td width="75%">
         I detta “settings”-liknande fragment så displayas den plats som för närvarande ligger i sharedpreferences Sen går det att hämta sin nuvarande position, via LocationCallback, vid lyckat resultat dirigeras användaren, precis som vid search for location,  tillbaka till “main”, BlankFragment2. Dessutom så sparas de i en Firestore Databas. Nederst på fragmentet finns de tidigare hämtade eller sökta positionerna. De hämtas från databasen (Firestore). De går att klicka på om användaren vill se vädret (dirigeras till “main”) eller ta bort och de raderas då från databasen.
     </td>
     </tr>
@@ -76,9 +76,9 @@ Jag har valt att göra en väderapp, där jag använder två API:er:
 <table>
     <tr>
     <td>
-    <img src="images/notification.png" width="400"/>
+    <img src="images/notification.png" width="25%"/>
     </td>
-    <td width="400">
+    <td width="75%">
         Om vädret visar regn skickas en notifikation.
         Om temperaturen är över 25°C, skickas en varning om hetta.
     </td>
