@@ -46,7 +46,7 @@ För inloggning använder jag **Firebase Authentication**.
 
 ## 🔔 Notifikationer
 
-![Notifikationer](images/notification.png)]
+![Notifikationer](images/notification.png)
 
 - Om vädret visar **regn** skickas en notifikation.
 - Om temperaturen är **över 25°C**, skickas en varning om hetta.
