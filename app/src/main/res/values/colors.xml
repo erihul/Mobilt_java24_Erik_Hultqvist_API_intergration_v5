@@ -2,9 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="textBackgroundLight">#3C888888</color>
+    <color name="textBackgroundLight">#B9B2B2B2</color>
     <color name="textBackgroundDark">#65888888</color>
     <color name="textBackgroundWhite">#72FFFFFF</color>
+    <color name="textColorBlack">#2B2B2B</color>
+
 
 
 </resources>
