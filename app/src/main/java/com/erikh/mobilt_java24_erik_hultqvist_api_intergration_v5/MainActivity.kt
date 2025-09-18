@@ -3,6 +3,7 @@ package com.erikh.mobilt_java24_erik_hultqvist_api_intergration_v5
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -53,7 +54,10 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
 
         toolbar = findViewById(R.id.mainToolbar)
+        /*toolbar.setBackgroundColor(Color.TRANSPARENT)
+        toolbar.elevation = 0f*/
         setSupportActionBar(toolbar)
+
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {

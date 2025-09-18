@@ -15,14 +15,31 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
-            android:layout_marginTop="0dp"
-            />
+            tools:layout_editor_absoluteX="-16dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+
+        <TextView
+            android:id="@+id/forecastText"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@color/textBackgroundWhite"
+            android:fontFamily="@font/urbanist_extralight"
+            android:paddingTop="50dp"
+            android:text="Weather Forecast"
+            android:textAlignment="center"
+            android:textColor="@color/textColorBlack"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5"
+            app:layout_constraintVertical_bias="0.726" />
 
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="40dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,43 +49,28 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@color/textBackgroundLight"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/urbanist_bold"
-            android:textColor="@color/textColorBlack"
             android:gravity="center"
             android:paddingStart="30dp"
             android:paddingEnd="30dp"
             android:text="TextView"
-            android:textSize="60sp"
+            android:textColor="@color/textColorBlack"
+            android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:background="@color/textBackgroundWhite"
-            android:fontFamily="@font/urbanist_extralight"
-            android:text="TextView"
-            android:textSize="34sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:background="@color/textBackgroundWhite"
+            android:layout_marginTop="12dp"
+            android:background="@color/textBackgroundLight"
             android:fontFamily="sans-serif-black"
             android:text="TextView"
+            android:textColor="@color/textColorBlack"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.496"
@@ -76,34 +78,35 @@
             app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@color/textBackgroundLight"
+            android:fontFamily="@font/urbanist_extralight"
+            android:text="TextView"
+            android:textColor="@color/textColorBlack"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+        <TextView
             android:id="@+id/locationText"
-            android:layout_width="176dp"
-            android:layout_height="176dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:background="@color/textBackgroundWhite"
             android:fontFamily="@font/urbanist_extralight"
             android:paddingTop="60dp"
             android:text="Location"
             android:textAlignment="center"
+            android:textColor="@color/textColorBlack"
             android:textSize="28sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView5"
-            app:layout_constraintVertical_bias="0.662" />
-
-        <TextView
-            android:id="@+id/forecastText"
-            android:layout_width="176dp"
-            android:layout_height="176dp"
-            android:background="@color/textBackgroundWhite"
-            android:fontFamily="@font/urbanist_extralight"
-            android:paddingTop="50dp"
-            android:text="Weather Forecast"
-            android:textAlignment="center"
-            android:textSize="28sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            app:layout_constraintVertical_bias="0.662" />
+            app:layout_constraintVertical_bias="0.726" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

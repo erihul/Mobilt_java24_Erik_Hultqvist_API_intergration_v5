@@ -5,8 +5,6 @@
     <color name="textBackgroundLight">#B9B2B2B2</color>
     <color name="textBackgroundDark">#65888888</color>
     <color name="textBackgroundWhite">#72FFFFFF</color>
-    <color name="textColorBlack">#2B2B2B</color>
-
-
-
+    <color name="textColorBlack">#373737</color>
+    <color name="transparent">#00000000</color>
 </resources>
